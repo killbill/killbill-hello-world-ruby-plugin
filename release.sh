@@ -31,7 +31,7 @@ rake killbill:package
 ARTIFACT="$PWD/pkg/killbill-helloworld-$VERSION.tar.gz"
 echo "Pushing $ARTIFACT to Maven Central"
 mvn gpg:sign-and-deploy-file \
-    -DgroupId=org.kill-bill.billing.ruby \
+    -DgroupId=org.kill-bill.billing.plugin.ruby \
     -DartifactId=helloworld-plugin \
     -Dversion=$VERSION \
     -Dpackaging=tar.gz \
