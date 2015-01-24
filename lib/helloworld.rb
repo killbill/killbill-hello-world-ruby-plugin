@@ -25,7 +25,7 @@ module Killbill::HelloWorld
         logger.warn "HelloWorldPlugin wasn't started properly - check logs"
         return
       end
-      @listener.update(event.account_id) if [:ACCOUNT_CREATION, :ACCOUNT_CHANGE].include?(event.event_type)
+      @listener.update(event.account_id, event.tenant_id) if [:ACCOUNT_CREATION, :ACCOUNT_CHANGE].include?(event.event_type)
     end
   end
 end

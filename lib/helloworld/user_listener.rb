@@ -5,11 +5,11 @@ module Killbill::HelloWorld
       @logger = logger
     end
 
-    def update(account_id)
+    def update(account_id, tenant_id)
       user = User.where(:kb_account_id => account_id).first_or_create!
 
       # Find the Kill Bill account associated with that account id
-      kb_account = @kb_apis.account_user_api.get_account_by_id(account_id, @kb_apis.create_context)
+      kb_account = @kb_apis.account_user_api.get_account_by_id(account_id, @kb_apis.create_context(tenant_id))
 
       @logger.info "Successfully saved #{kb_account.name} (#{kb_account.email})"
     end
