@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    killbill-helloworld (0.1.0)
+    killbill-helloworld (1.0.0)
       activerecord (~> 4.1.0)
       activerecord-bogacs (~> 0.3)
       activerecord-jdbc-adapter (~> 1.3)
