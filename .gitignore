@@ -19,17 +19,15 @@ _yardoc
 doc/
 
 .jbundler
-Jarfile.lock
-Gemfile.lock
 
 .DS_Store
 
-# Build directory
-killbill-helloworld/
+# Testing database
+test.db
 
 target
 pom.xml.asc
 
 .idea/
 
-test.db
+Gemfile.head.lock
