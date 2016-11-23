@@ -1,3 +1,4 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 
 gemspec
+#gem 'killbill', :github => 'killbill/killbill-plugin-framework-ruby'
