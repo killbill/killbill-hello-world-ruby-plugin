@@ -36,25 +36,25 @@ describe Killbill::HelloWorld::HelloWorldPlugin do
     kb_account_id = create_kb_account
 
     # Verify the initial state of our table
-    Killbill::HelloWorld::User.count.should == 0
+    expect(Killbill::HelloWorld::User.count).to be == 0
 
     # Send a creation event
     @plugin.on_event OpenStruct.new(:event_type => :ACCOUNT_CREATION, :account_id => kb_account_id)
 
     # Verify the account exists
-    Killbill::HelloWorld::User.count.should == 1
+    expect(Killbill::HelloWorld::User.count).to be == 1
 
     # Send an update event
     @plugin.on_event OpenStruct.new(:event_type => :ACCOUNT_CHANGE, :account_id => kb_account_id)
 
     # Verify we didn't create dups
-    Killbill::HelloWorld::User.count.should == 1
+    expect(Killbill::HelloWorld::User.count).to be == 1
 
     # Create a new user
     kb_account_id = create_kb_account
     @plugin.on_event OpenStruct.new(:event_type => :ACCOUNT_CREATION, :account_id => kb_account_id)
 
-    Killbill::HelloWorld::User.count.should == 2
+    expect(Killbill::HelloWorld::User.count).to be == 2
   end
 
   private
